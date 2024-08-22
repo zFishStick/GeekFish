@@ -5,7 +5,7 @@ const path = require('path');
 const app = express();
 const port = 3000;
 
-const url = 'mongodb://localhost:27017'; // Cambia se usi un'URL diversa
+const url = 'mongodb://localhost:27017/'; // Cambia se usi un'URL diversa
 const dbName = 'GamesDB';
 
 app.use(express.static(path.join(__dirname, '../')));
@@ -15,7 +15,7 @@ app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, '../index.html'));
 });
 
-// Route per ottenere i dati dei giochi
+// Endpoint creato automaticamente
 app.get('/api/games', async (req, res) => {
     const client = new MongoClient(url, { useUnifiedTopology: true });
 
@@ -24,8 +24,8 @@ app.get('/api/games', async (req, res) => {
         console.log('Connected to MongoDB');
 
         const db = client.db(dbName);
-        const collection = db.collection('games-collection');
-        const games = await collection.find({ name: "Minecraft" }).toArray();
+        const collection = db.collection('video-games');
+        const games = await collection.find().toArray();
 
         res.json(games);
     } catch (err) {
