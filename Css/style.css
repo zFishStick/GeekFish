@@ -1,0 +1,115 @@
+html {
+  background-color: #6C5B7B;
+  overflow-y: hidden;
+  overflow-x: hidden;
+}
+
+body {
+  background-color: transparent;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+
+.social-network-icon {
+  font-size: 30px;
+}
+
+.translate-button {
+  background-color: #355C7D;
+  color: #F67280;
+  border: none;
+  font-size: 25px;
+  font-weight: 500;
+}
+
+.title-subtitle {
+  display: flex;
+  flex-direction: column;
+  width: -moz-fit-content;
+  width: fit-content;
+  align-items: center;
+  margin-top: 6vw;
+}
+.title-subtitle h1 {
+  color: #F67280;
+  font-size: 10vw;
+  font-family: "Press Start 2P", system-ui;
+  font-weight: 400;
+  font-style: normal;
+  z-index: 3;
+}
+.title-subtitle h3 {
+  color: #C06C84;
+  font-size: 2.5vw;
+  width: 500px;
+  text-align: center;
+  margin-bottom: 4vw;
+}
+
+.main-button-box {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  z-index: 3;
+}
+.main-button-box button {
+  background-color: #5f506c;
+  border-radius: 15px;
+  border: none;
+  padding: 0;
+  padding-bottom: 5px;
+  outline-offset: 4px;
+}
+.main-button-box span {
+  display: block;
+  padding: 12px 42px;
+  color: #F67280;
+  font-size: 3.5vw;
+  border: none;
+  background-color: #355C7D;
+  border-radius: 15px;
+  font-weight: 500;
+  transform: translateY(-10px);
+}
+.main-button-box span:active {
+  transform: translateY(1px);
+}
+
+.left-side {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+}
+.left-side img {
+  position: absolute;
+  bottom: 0;
+}
+.left-side .nobushi-img {
+  z-index: 2;
+  width: 16vw;
+  left: 2vw;
+}
+.left-side .steve-img {
+  z-index: 1;
+  width: 25vw;
+  left: 10vw;
+}
+
+.right-side {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+.right-side img {
+  position: absolute;
+  bottom: 0;
+}
+.right-side .lian-img {
+  z-index: 1;
+  width: 22vw;
+  left: 80vw;
+}
+.right-side .shogun-img {
+  z-index: 2;
+  width: 35vw;
+}/*# sourceMappingURL=style.css.map */

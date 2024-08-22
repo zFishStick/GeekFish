@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Games List</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+        th {
+            background-color: #f4f4f4;
+        }
+    </style>
+</head>
+<body>
+    <h1>Game Details</h1>
+    <table id="gamesTable">
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Details</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- I dati verranno inseriti qui -->
+        </tbody>
+    </table>
+
+    <script>
+        async function fetchGames() {
+            try {
+                const response = await fetch('/api/games');
+                const games = await response.json();
+
+                const tableBody = document.querySelector('#gamesTable tbody');
+                tableBody.innerHTML = '';
+
+                games.forEach(game => {
+                    const row = document.createElement('tr');
+                    const cellName = document.createElement('td');
+                    const cellDetails = document.createElement('td');
+                    
+                    cellName.textContent = game.name; // Supponendo che tu abbia un campo 'name'
+                    cellDetails.textContent = JSON.stringify(game); // Mostra i dettagli in formato JSON
+                    
+                    row.appendChild(cellName);
+                    row.appendChild(cellDetails);
+                    
+                    tableBody.appendChild(row);
+                });
+            } catch (error) {
+                console.error('Errore nel recupero dei dati:', error);
+            }
+        }
+
+        // Carica i dati quando la pagina è pronta
+        window.onload = fetchGames;
+    </script>
+</body>
+</html>

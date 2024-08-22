@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="/Images/joystick.png">
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+
+    <script src="https://kit.fontawesome.com/98f0a7a5de.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+     <link rel="stylesheet" href="Css/responsive-style.css">
+    <link rel="stylesheet" href="Css/style.css">
+    <title>GeekFish</title>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="navbar-brand" href="#">
+                            <i class="fa-brands fa-github social-network-icon" style="color: #F67280;"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="navbar-brand" href="#">
+                            <i class="fa-brands fa-instagram social-network-icon" style="color: #F67280;"></i>
+                        </a>
+                    </li>
+                </ul>
+                <button type="button" class="ms-auto translate-button">ENG</button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="title-subtitle mx-auto">
+        <h1>GeekFish</h1>
+        <h3>Il sito dove valuto i più importanti giochi giocati nella mia vita</h3>
+        <!-- <h3>The website where i rate the most important games played in my life</h3> -->
+    </div>
+
+    <div class="left-side">
+        <img src="/Images/steve-cut.png" alt="steve" class="steve-img">
+        <img src="/Images/nobushi-cut.png" alt="nobushi" class="nobushi-img">
+    </div>
+
+    <div class="main-button-box text-center">
+        <button onclick=changePage()><span>Sfoglia la mia libreria</span></button>
+    </div>
+
+    <div class="right-side">
+        <img src="/Images/lian.png" alt="lian" class="lian-img">
+        <img src="/Images/shogun-cut.png" alt="shogun" class="shogun-img">
+    </div>
+</body>
+
+<script src="JavaScript/changePage.js"></script>
+
+</html>
