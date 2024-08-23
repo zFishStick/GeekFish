@@ -1,12 +1,25 @@
 const express = require('express');
 const { MongoClient } = require('mongodb');
 const path = require('path');
+const AWS = require('aws-sdk');
+const fs = require('fs');
 
 const app = express();
 const port = 3000;
 
-const url = 'mongodb://localhost:27017/'; // Cambia se usi un'URL diversa
+const url = 'mongodb://localhost:27017'; // Cambia se usi un'URL diversa
 const dbName = 'GamesDB';
+
+// Configura le credenziali AWS
+AWS.config.update({
+    accessKeyId: process.env.AWS_ACCESS_KEY_ID,  // Usa variabili d'ambiente per maggiore sicurezza
+    secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
+    region: 'eu-west-1' // Regione del tuo bucket S3
+});
+
+const s3 = new AWS.S3();
+const bucketName = 'pesca-games-images'; // Nome del tuo bucket S3
+
 
 app.use(express.static(path.join(__dirname, '../')));
 

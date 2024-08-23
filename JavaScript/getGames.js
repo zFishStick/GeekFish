@@ -1,23 +1,28 @@
 async function getGames() {
     try {
-        const response = await fetch('/api/games'); //Dove si trova la collezione
+        const response = await fetch('/api/games'); // Recupera i dati dalla collezione
         const games = await response.json();
 
-        const tableBody = document.querySelector('#gamesTable tbody');
-        tableBody.innerHTML = '';
+        const grid = document.getElementById('main-grid');
 
         games.forEach(game => {
-            const row = document.createElement('tr');
-            const cellName = document.createElement('td');
-            const cellDetails = document.createElement('td');
-            
-            cellName.textContent = game.name; // Supponendo che tu abbia un campo 'name'
-            cellDetails.textContent = JSON.stringify(game); // Mostra i dettagli in formato JSON
-            
-            row.appendChild(cellName);
-            row.appendChild(cellDetails);
-            
-            tableBody.appendChild(row);
+            const col = document.createElement('div');
+            col.classList.add('col');
+
+            // Crea l'elemento <img> e assegna l'URL dell'immagine
+            const img = document.createElement('img');
+            img.classList.add('game-img');
+            img.src = game.img; // Assegna direttamente l'URL dell'immagine
+            img.alt = game.name; // Imposta un alt tag con il nome del gioco
+            col.appendChild(img);
+
+            // Crea un div per il nome del gioco
+            const row = document.createElement('div');
+            row.classList.add('p-3');
+            row.textContent = game.name; // Assegna direttamente il nome del gioco
+            col.appendChild(row);
+
+            grid.appendChild(col);
         });
     } catch (error) {
         console.error('Errore nel recupero dei dati:', error);

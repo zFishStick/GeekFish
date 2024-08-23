@@ -112,4 +112,11 @@ body {
 .right-side .shogun-img {
   z-index: 2;
   width: 35vw;
+}
+
+/* Games page */
+.game-img {
+  width: 300px;
+  margin-left: 20px;
+  margin-right: 20px;
 }/*# sourceMappingURL=style.css.map */
