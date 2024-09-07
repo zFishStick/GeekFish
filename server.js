@@ -3,12 +3,15 @@ const { MongoClient } = require('mongodb');
 const path = require('path');
 const AWS = require('aws-sdk');
 const fs = require('fs');
+require('dotenv').config()
 
 const app = express();
 const port = 3000;
 
 const url = process.env.MONGODB_URI || 'mongodb://localhost:27017/GamesDB';
 const dbName = 'GamesDB';
+
+console.log(url)
 
 // Configura le credenziali AWS
 AWS.config.update({
