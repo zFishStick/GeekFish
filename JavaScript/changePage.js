@@ -1,3 +1,3 @@
 function changePage() {
-    window.location.href = "Pages/game.html";
+    window.location.href = "Pages/library.html";
 }

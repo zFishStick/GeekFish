@@ -7,18 +7,27 @@ async function getGames() {
 
         games.forEach(game => {
             const col = document.createElement('div');
-            col.classList.add('col');
+            col.classList.add('g-col-6', 'g-col-md-4');
+
+            const img_link = document.createElement('a');
+            img_link.classList.add('img-link');
+            img_link.onclick = function () {
+                setPageGame(game.name, game.comment, game.img)
+            };
+            img_link.href = "game-page.html"
 
             // Crea l'elemento <img> e assegna l'URL dell'immagine
             const img = document.createElement('img');
             img.classList.add('game-img');
             img.src = game.img; // Assegna direttamente l'URL dell'immagine
             img.alt = game.name; // Imposta un alt tag con il nome del gioco
-            col.appendChild(img);
+
+            img_link.appendChild(img);
+            col.appendChild(img_link);
 
             // Crea un div per il nome del gioco
             const row = document.createElement('div');
-            row.classList.add('p-3');
+            row.classList.add('game-name');
             row.textContent = game.name; // Assegna direttamente il nome del gioco
             col.appendChild(row);
 
@@ -31,3 +40,9 @@ async function getGames() {
 
 // Carica i dati quando la pagina è pronta
 window.onload = getGames;
+
+function setPageGame(game_name, game_comment, game_img) {
+    sessionStorage.setItem("game_name", game_name);
+    sessionStorage.setItem("game_comment", game_comment);
+    sessionStorage.setItem("game_img", game_img);
+}

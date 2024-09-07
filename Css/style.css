@@ -1,5 +1,8 @@
 html {
   background-color: #6C5B7B;
+}
+
+.first-page {
   overflow-y: hidden;
   overflow-x: hidden;
 }
@@ -41,9 +44,9 @@ body {
 .title-subtitle h3 {
   color: #C06C84;
   font-size: 2.5vw;
-  width: 500px;
+  width: 560px;
   text-align: center;
-  margin-bottom: 4vw;
+  margin-bottom: 7vw;
 }
 
 .main-button-box {
@@ -114,9 +117,66 @@ body {
   width: 35vw;
 }
 
-/* Games page */
+/* Games library */
+.library-title {
+  color: #F67280;
+  font-size: 6vw;
+  text-align: center;
+}
+
 .game-img {
   width: 300px;
+  border-radius: 15px;
+}
+
+#main-grid {
+  display: flex;
+  justify-content: center;
+}
+#main-grid .game-img {
   margin-left: 20px;
   margin-right: 20px;
+  box-shadow: 0px 0px 10px 0px #000000;
+}
+#main-grid .game-name {
+  font-size: 2vw;
+  font-weight: 500;
+}
+#main-grid .img-link img {
+  transition: transform 0.5s ease;
+}
+#main-grid .img-link:hover img {
+  transform: translateY(-10px);
+  cursor: pointer;
+}
+
+#loader-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #6C5B7B;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+/* Stile per la barra di caricamento */
+#loader {
+  width: 50%;
+  height: 4px;
+  background-color: #F67280;
+  animation: loading 2s linear infinite;
+}
+
+#content {
+  display: none;
+}
+
+/* Game page */
+.game-image {
+  width: 300px;
+  border-radius: 15px;
 }/*# sourceMappingURL=style.css.map */
