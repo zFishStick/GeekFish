@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" id="second-page">
+<html lang="en" class="second-page">
 
 <head>
     <meta charset="UTF-8">
@@ -26,18 +26,18 @@
         <div id="loader"></div>
     </div>
 
-    <div id="content">
+    <div class="back-container ms-3 mt-3">
+        <button class="back-btn" id="back-to-index" onclick=changePage(this.id)>Indietro</button>
+    </div>
+
+    <div id="content" class="container overflow-hidden text-center">
         <h1 class="library-title mb-3">Libreria</h1>
-        <div class="grid text-center" id="main-grid">
-            <div class="g-col-6 g-col-md-4"></div>
-            <div class="g-col-6 g-col-md-4"></div>
-            <div class="g-col-6 g-col-md-4"></div>
-        </div>
+        <div id="main-grid" class="row gx-5"></div>
     </div>
     
 
-
     <script src="/JavaScript/loading.js"></script>
+    <script src="/JavaScript/changePage.js"></script>
     <script src="/JavaScript/getGames.js"></script>
 </body>
 

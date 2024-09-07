@@ -7,7 +7,7 @@ async function getGames() {
 
         games.forEach(game => {
             const col = document.createElement('div');
-            col.classList.add('g-col-6', 'g-col-md-4');
+            col.classList.add('col', 'mb-4');
 
             const img_link = document.createElement('a');
             img_link.classList.add('img-link');

@@ -50,7 +50,7 @@ body {
         font-size: 2.5vw;
         width: 560px;
         text-align: center;
-        margin-bottom: 7vw;
+        margin-bottom: 4vw;
     }
 }
 
@@ -60,7 +60,7 @@ body {
     position: relative;
     z-index: 3;
 
-    button {
+    .main-button {
         background-color: darken($color: $bg_color, $amount: 5%);
         border-radius: 15px;
         border: none;
@@ -132,9 +132,21 @@ body {
 }
 
 /* Games library */
+
+.back-container{
+
+    .back-btn{
+        color: $text_color;
+        background-color: $button_color;
+        font-size: 2rem;
+        border: none;
+        border-radius: 15px;
+    }
+}
+
 .library-title {
     color: $text_color;
-    font-size: 6vw;
+    font-size: 5rem;
     text-align: center;
 }
 
