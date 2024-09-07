@@ -7,7 +7,7 @@ const fs = require('fs');
 const app = express();
 const port = 3000;
 
-const url = 'mongodb://localhost:27017'; // Cambia se usi un'URL diversa
+const url = process.env.MONGODB_URI || 'mongodb://localhost:27017/GamesDB';
 const dbName = 'GamesDB';
 
 // Configura le credenziali AWS
@@ -21,7 +21,11 @@ const s3 = new AWS.S3();
 const bucketName = 'pesca-games-images'; // Nome del tuo bucket S3
 
 
-app.use(express.static(path.join(__dirname, '../')));
+app.use(express.static(path.join(__dirname, '/')));
+app.use('/JavaScript', express.static(path.join(__dirname, '/JavaScript')));
+app.use('/Css', express.static(path.join(__dirname, '/Css')));
+app.use('/Pages', express.static(path.join(__dirname, '/Pages')));
+app.use('/Images', express.static(path.join(__dirname, '/Images')));
 
 // Rotta per la root per servire 'index.html'
 app.get('/', (req, res) => {
@@ -37,7 +41,7 @@ app.get('/api/games', async (req, res) => {
         console.log('Connected to MongoDB');
 
         const db = client.db(dbName);
-        const collection = db.collection('video-games');
+        const collection = db.collection('games-collection');
         const games = await collection.find().toArray();
 
         res.json(games);
