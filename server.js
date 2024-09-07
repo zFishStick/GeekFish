@@ -32,7 +32,7 @@ app.use('/Images', express.static(path.join(__dirname, '/Images')));
 
 // Rotta per la root per servire 'index.html'
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, '../index.html'));
+    res.sendFile(path.join(__dirname, 'index.html'));
 });
 
 // Endpoint creato automaticamente
