@@ -1,5 +1,20 @@
 html {
   background-color: #6C5B7B;
+  /* Track */
+  /* Handle */
+  /* Handle on hover */
+}
+html ::-webkit-scrollbar {
+  width: 10px;
+}
+html ::-webkit-scrollbar-track {
+  background: #F67280;
+}
+html ::-webkit-scrollbar-thumb {
+  background: #C06C84;
+}
+html ::-webkit-scrollbar-thumb:hover {
+  background: #b85a75;
 }
 
 .first-page {
@@ -118,12 +133,16 @@ body {
 }
 
 /* Games library */
+.back-container {
+  display: flex;
+}
 .back-container .back-btn {
   color: #F67280;
   background-color: #355C7D;
-  font-size: 2rem;
+  font-size: 1.5rem;
   border: none;
   border-radius: 15px;
+  font-weight: 500;
 }
 
 .library-title {
@@ -184,7 +203,28 @@ body {
 }
 
 /* Game page */
-.game-image {
-  width: 300px;
+.game-body .game-container {
+  font-size: 1vw;
+}
+.game-body .game-container .game-name {
+  font-size: 5em;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 0 auto 0 auto;
+}
+.game-body .game-container .image-flex .game-image {
+  width: 27em;
+  height: 22em;
   border-radius: 15px;
+  margin-right: 1vw;
+  float: left;
+}
+.game-body .game-container .image-flex #game-comment {
+  font-size: 2em;
+  line-height: 3.2vw;
+  font-weight: 500;
+}
+.game-body .back-container {
+  justify-content: center;
+  margin-bottom: 1vw;
 }/*# sourceMappingURL=style.css.map */

@@ -2,9 +2,29 @@ $bg_color: #6C5B7B;
 $button_color: #355C7D;
 $text_color: #F67280;
 $subtext_color: #C06C84;
+$paragraph_color: #212529;
 
 html {
     background-color: $bg_color;
+
+    ::-webkit-scrollbar {
+        width: 10px;
+      }
+      
+      /* Track */
+      ::-webkit-scrollbar-track {
+        background: $text_color; 
+      }
+       
+      /* Handle */
+      ::-webkit-scrollbar-thumb {
+        background: $subtext_color; 
+      }
+      
+      /* Handle on hover */
+      ::-webkit-scrollbar-thumb:hover {
+        background: darken($color: $subtext_color, $amount: 5);; 
+      }
 }
 
 .first-page {
@@ -133,14 +153,16 @@ body {
 
 /* Games library */
 
-.back-container{
+.back-container {
+    display: flex;
 
-    .back-btn{
+    .back-btn {
         color: $text_color;
         background-color: $button_color;
-        font-size: 2rem;
+        font-size: 1.5rem;
         border: none;
         border-radius: 15px;
+        font-weight: 500;
     }
 }
 
@@ -207,7 +229,38 @@ body {
 }
 
 /* Game page */
-.game-image {
-    width: 300px;
-    border-radius: 15px;
+
+.game-body {
+
+    .game-container {
+        font-size: 1vw;
+
+        .game-name {
+            font-size: 5em;
+            width: fit-content;
+            margin: 0 auto 0 auto;
+        }
+
+        .image-flex {
+
+            .game-image {
+                width: 27em;
+                height: 22em;
+                border-radius: 15px;
+                margin-right: 1vw;
+                float: left;
+            }
+
+            #game-comment {
+                font-size: 2em;
+                line-height: 3.2vw;
+                font-weight: 500;
+            }
+        }
+    }
+
+    .back-container{
+        justify-content: center;
+        margin-bottom: 1vw;
+    }
 }

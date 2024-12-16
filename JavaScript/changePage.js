@@ -5,4 +5,7 @@ function changePage(clicked_id) {
     else if(clicked_id == "back-to-index"){
         window.location.href = "../index.html";
     }
+    else if(clicked_id == "back-to-library"){
+        window.location.href = "library.html";
+    }
 }

@@ -16,19 +16,26 @@
     <!-- CSS -->
     <link rel="stylesheet" href="/Css/responsive-style.css">
     <link rel="stylesheet" href="/Css/style.css">
-    
+
     <title class="game-name">Document</title>
 </head>
 
-<body>
-    <div class="container">
+<body class="game-body">
+    <div class="container game-container">
         <h1 class="game-name">Game name</h1>
-        <img id="game-img" class="game-image">
-        <p id="game-comment"></p>
+        <div class="image-flex">
+            <img id="game-img" class="game-image">
+            <p id="game-comment"></p>
+        </div>
+    </div>
+
+    <div class="back-container ms-3 mt-3">
+        <button class="back-btn" id="back-to-library" onclick=changePage(this.id)>INDIETRO</button>
     </div>
 
 </body>
 
 <script src="/JavaScript/createPageGame.js"></script>
+<script src="/JavaScript/changePage.js"></script>
 
 </html>
